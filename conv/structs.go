@@ -37,7 +37,7 @@ func (s Scheme) Color(name string) (string, error) {
 
 	for _, o := range s.Colors {
 		if o.Name == name {
-			return fmt.Sprintf("#%s", o.Value), nil
+			return fmt.Sprintf("#%06s", o.Value), nil
 		}
 	}
 
@@ -94,7 +94,7 @@ func (v Value) BG() (string, error) {
 		return "", err
 	}
 
-	return fmt.Sprintf("#%s", bg), nil
+	return fmt.Sprintf("#%06s", bg), nil
 }
 
 func (v Value) FG() (string, error) {
@@ -104,5 +104,5 @@ func (v Value) FG() (string, error) {
 		return "", nil
 	}
 
-	return fmt.Sprintf("#%s", fg), nil
+	return fmt.Sprintf("#%06s", fg), nil
 }
